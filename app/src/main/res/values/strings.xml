@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="id_content">아이디를 8자 이상 입력해주세요</string>
+    <string name="email_content">이메일을 정확하게 입력해주세요</string>
+    <string name="pass_content">비밀번호를 특수/영대소문자, 숫자 입력해주세요</string>
+    <string name="pass2_content">비밀번호를 동일하게 입력해주세요</string>
+</resources>
