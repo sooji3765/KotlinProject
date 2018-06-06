@@ -3,12 +3,10 @@ package com.example.user.myapplication
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.user.myapplication.model.User
 import io.realm.Realm
-import io.realm.RealmConfiguration
-import io.realm.kotlin.where
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,22 +16,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Realm.init(this)
-        var config = RealmConfiguration.Builder()
-                .name("users.realm")
-                .build()
-        realm = Realm.getInstance(config)
+
+        realm = Realm.getDefaultInstance()
 
         button2.setOnClickListener {
 
             if (dbCheck()==true){
-                var intent= Intent(this,LoinAcitivy::class.java)
+                var intent= Intent(this,FirstActivity::class.java)
                 intent.putExtra("id",editText.text.toString().trim())
                 startActivity(intent)
             }
-
         }
-
         button3.setOnClickListener {
 
             var intent1 = Intent(this,JoinActivity::class.java)
@@ -51,14 +44,13 @@ class MainActivity : AppCompatActivity() {
 
         // 결과가 없으면
         if (user.size ==0 ){
-            Toast.makeText(this,"일치하는 정보 없음",Toast.LENGTH_SHORT).show()
+            toast("일치하는 정보 없음")
             return false
         }else{
-            if(user.get(0)!!.password1.toString()==pass){
+            if(user.get(0)!!.password.toString()==pass){
                    return true
             }else{
-                Toast.makeText(this,"잘못된 비밀번호",Toast.LENGTH_SHORT).show()
-
+                toast("잘못된 비밀번호 입니다.")
             }
         }
         return false
