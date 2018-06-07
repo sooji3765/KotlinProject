@@ -4,35 +4,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="70dp"
+    android:layout_margin="10dp"
+    android:background="@color/colorPrimaryDark">
 
-
-    <TextView
-        android:id="@+id/memoNum"
-        android:layout_width="37dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="20dp" />
 
     <TextView
         android:id="@+id/memoContent"
-        android:layout_width="289dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:gravity="left"
         android:text="오늘의 메모"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/memoNum"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -40,12 +29,10 @@
         android:layout_width="138dp"
         android:layout_height="19dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:gravity="right"
         android:text="2018/6/5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toEndOf="@+id/memoNum"
-        tools:layout_editor_absoluteY="49dp" />
+        tools:layout_editor_absoluteY="49dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
